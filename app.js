@@ -117,7 +117,7 @@ function newSet (event) {
   randomProduct();
 }
 
-//Update data arrays for chart
+//Update data arrays 
 function updateChartArrays() {
   for (var i = 0; i < Product.allProducts.length; i++) {
     names[i] = Product.allProducts[i].name;
