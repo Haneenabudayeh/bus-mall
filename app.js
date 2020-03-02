@@ -1,3 +1,4 @@
+//Make an object
 'use strict';
 
 //Array of products
@@ -57,10 +58,6 @@ if (localStorage.getItem('storedProducts') !== null) {
   console.log('Not found');
   localStorage.setItem('storedProducts', JSON.stringify(Product.allProducts));
 }
-
-
-//Randomly display products
-
 function randomProduct() {
   var randomOne = Math.floor(Math.random() * Product.allProducts.length);
   var randomTwo = Math.floor(Math.random() * Product.allProducts.length);
@@ -117,7 +114,7 @@ function newSet (event) {
   randomProduct();
 }
 
-//Update data arrays 
+//Update data arrays for chart
 function updateChartArrays() {
   for (var i = 0; i < Product.allProducts.length; i++) {
     names[i] = Product.allProducts[i].name;
@@ -125,7 +122,84 @@ function updateChartArrays() {
   }
 }
 
-// 
+//Chart Stuff
+var data = {
+  labels: names,
+  datasets: [
+    {
+      label: 'Votes per Product',
+      data: votes,
+      backgroundColor: [
+        'rgb(255,18,0)',
+        'rgb(232,62,0)',
+        'rgb(255,117,0)',
+        'rgb(232,146,0)',
+        'rgb(255,195,0)',
+        'rgb(255,205,0)',
+        'rgb(232,218,0)',
+        'rgb(192,255,0)',
+        'rgb(68,232,0)',
+        'rgb(0,255,35)',
+        'rgb(0,255,112)',
+        'rgb(0,232,189)',
+        'rgb(0,210,255)',
+        'rgb(0,111,232)',
+        'rgb(0,33,255)',
+        'rgb(0,80,255)',
+        'rgb(131,0,232)',
+        'rgb(206,0,255)',
+        'rgb(232,0,195)',
+        'rgb(255,0,83)'
+      ],
+
+      hoverBackgroundColor: [
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon',
+        'lemonchiffon'
+      ]
+    }]
+};
+
+function drawChart() {
+  var ctx = document.getElementById('productStats').getContext('2d');
+  new Chart(ctx,{
+    type: 'doughnut',
+    data: data,
+    options: {
+      responsive: false,
+      animation: {
+        duration: 1000,
+        easing: 'easeOutBounce'
+      }
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          max: 20,
+          min: 0,
+          stepSize: 1.0
+        }
+      }]
+    }
+  });
+}
 
 
 //Event Listener
