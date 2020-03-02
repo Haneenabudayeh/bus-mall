@@ -58,24 +58,6 @@ if (localStorage.getItem('storedProducts') !== null) {
   console.log('Not found');
   localStorage.setItem('storedProducts', JSON.stringify(Product.allProducts));
 }
-
-//Retrieving data from local storage and updating arrays, the complicated way
-// if (localStorage.getItem('storedProducts') !== null) {
-//   console.log('Data found');
-//   var staging = JSON.parse(localStorage.getItem('storedProducts'));
-//   for (var i = 0; i < Product.allProducts.length; i++) {
-//     if (Product.allProducts[i].name == staging[i].name) {
-//       console.log('Match found');
-//       Product.allProducts[i].votes = staging[i].votes;
-//     }
-//   }
-// } else {
-//   console.log('Not found');
-//   localStorage.setItem('storedProducts', JSON.stringify(Product.allProducts));
-// }
-
-//Randomly display products
-
 function randomProduct() {
   var randomOne = Math.floor(Math.random() * Product.allProducts.length);
   var randomTwo = Math.floor(Math.random() * Product.allProducts.length);
