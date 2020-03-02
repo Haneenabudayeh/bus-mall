@@ -1,6 +1,6 @@
   
 header {
-    background-image: url('img/colorbackground.jpg');
+    background-color: aquamarine;
     height: 100px;
     padding-top: 20px;
     box-shadow: 5px 3px 8px #888888;
@@ -34,7 +34,7 @@ header {
   
   footer {
     height: 200px;
-    background-image: url('img/monobackground.jpg');
+    background-color: aquamarine;
     margin-top: 150px;
   }
   
