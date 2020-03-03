@@ -184,8 +184,8 @@ var data = {
 
 function drawChart() {
   var ctx = document.getElementById('productStats').getContext('2d');
-  songChart = new Chart(ctx,{
-    type: 'bar',
+  new Chart(ctx,{
+    type: 'doughnut',
     data: data,
     options: {
       responsive: false,
@@ -204,8 +204,8 @@ function drawChart() {
       }]
     }
   });
-  chartDrawn = true;
 }
+
 
 
 //Event Listener
