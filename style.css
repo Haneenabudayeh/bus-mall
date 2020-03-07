@@ -97,4 +97,15 @@ ol li:first-child {
   padding-top: 0;
   margin-right: 20px;
   margin-bottom: 190px;
+  color: #d3d3d3;
+}
+ul{
+  /* background-color: #1f3a7a; */
+  height: 50px;
+  border-bottom: #000 solid 3px;
+  font-family: Racing Sans One;
+  color:rgb(8, 8, 8);
+  font-size: 20px;
+  padding-top: 5px;
+  
 }
